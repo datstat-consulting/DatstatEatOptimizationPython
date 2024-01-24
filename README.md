@@ -2,6 +2,7 @@
 Implements Erika Antonette Tan's Optimization Algorithm into Python
 
 # Example usage:
+```
 if __name__ == "__main__":
     # Define your problem dimension D and objective function f here
     D = 2  # Example dimension
@@ -17,3 +18,4 @@ if __name__ == "__main__":
     print("Best Solution:", xbest)
     print("Evaluations:", evals)
     print("Time taken: {:.2f} seconds".format(time.time() - start_time))
+```
