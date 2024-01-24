@@ -1,6 +1,8 @@
 # DatstatEatOptimizationPython
 Implements Erika Antonette Tan's Optimization Algorithm into Python
 
+- Enriquez, E. A. T., Mendoza, R. G., & Velasco, A. C. T. (2022). Philippine eagle optimization algorithm. IEEE Access, 10, 29089-29120. Retrieved from https://ieeexplore.ieee.org/abstract/document/9732449.
+
 # Example usage:
 ```
 if __name__ == "__main__":
