@@ -6,18 +6,28 @@ Implements Erika Antonette Tan's Optimization Algorithm into Python
 # Example usage:
 ```
 if __name__ == "__main__":
-    # Define your problem dimension D and objective function f here
-    D = 2  # Example dimension
-    def objective_function(x):
-        return np.sum(x ** 2)  # Example objective: minimize the sum of squares
-    
-    Space_x_max = np.array([5, 5])
-    Space_x_min = np.array([-5, -5])
+    # Example: minimize Sphere function on [-5,5]^2, retaining your variable naming.
+    D = 2
 
-    start_time = time.time()
-    fbest, xbest, evals = pheaglealgorithm(D, objective_function, Space_x_max, Space_x_min)
-    print("Best Fitness:", fbest)
-    print("Best Solution:", xbest)
-    print("Evaluations:", evals)
-    print("Time taken: {:.2f} seconds".format(time.time() - start_time))
+    def ObjectiveFunction(x: np.ndarray) -> float:
+        return float(np.sum(x * x))
+
+    SpaceXMax = np.array([5.0, 5.0])
+    SpaceXMin = np.array([-5.0, -5.0])
+
+    # Quick demo budgets (defaults would be IES=20*D^2, IFS=10*D^2, MFE=10000*D)
+    result = PhilippineEagleAlgorithm(
+        D=D,
+        f=ObjectiveFunction,
+        SpaceXMax=SpaceXMax,
+        SpaceXMin=SpaceXMin,
+        IES=200,
+        IFS=60,
+        MFE=5000,
+        Seed=42
+    )
+
+    print("Best Fitness:", result.FBest)
+    print("Best Solution:", result.XBest)
+    print("Evaluations Used:", result.EvalsUsed)
 ```
